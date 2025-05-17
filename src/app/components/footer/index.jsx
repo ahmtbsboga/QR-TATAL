@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
@@ -8,9 +9,18 @@ const Footer = () => {
         <h1 className="font-extrabold text-lg">Sosyal Medya Hesaplarımız</h1>
 
         <div className="flex flex-row justify-center mt-4 items-center gap-10 max-sm:flex-row max-sm:gap-3">
-          <Link href={"/"}>
-            📞 İletişim: <br /> 0 (537) 379 35 04
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href={"/"}>
+              📞 İletişim: <br /> 0 (537) 379 35 04
+            </Link>
+            <Image
+              src={"/photo/4.jpeg"}
+              alt="berberali"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+          </div>
           <Link
             href={"https://www.instagram.com/berber_ali_turgut/"}
             target="_blank"

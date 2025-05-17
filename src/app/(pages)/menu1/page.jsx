@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../../firebaseConfig";
 import Header from "../../components/header";
@@ -8,6 +8,21 @@ import Header from "../../components/header";
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setSelectedProduct(null); // dışarı tıklandıysa kapat
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,26 +46,37 @@ export default function ProductsPage() {
       {/*  modal */}
       {selectedProduct && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-xl shadow-xl w-[70%] max-w-md relative">
+          <div
+            ref={modalRef}
+            className="bg-white p-6 rounded-xl shadow-xl w-[70%] max-w-md relative"
+          >
             <button
               onClick={() => setSelectedProduct(null)}
               className="absolute top-3 right-3 text-white bg-black rounded-full w-7 h-7 text-sm"
             >
               ✕
             </button>
-            <h2 className="text-xl font-semibold text-center">
-              {selectedProduct.name}
-            </h2>
-            <p className="mt-4 text-center font-bold">
-              {selectedProduct.price > 0
-                ? `Fiyat: ${selectedProduct.price}₺`
-                : ""}
-            </p>
-            <img
-              src={selectedProduct.imageName}
-              alt="ürün"
-              className="w-[100px] h-[100px] object-cover rounded-full mt-4 mx-auto"
-            />
+            <div className="flex flex-col justify-between h-[40%] ">
+              <h2 className="text-xl font-semibold text-center">
+                {selectedProduct.name}
+              </h2>
+              <p className="mt-4 text-center font-bold">
+                {selectedProduct.price > 0
+                  ? `Fiyat: ${selectedProduct.price}₺`
+                  : ""}
+              </p>
+              <img
+                src={selectedProduct.imageName}
+                alt="ürün"
+                className="w-[100px] h-[100px] object-cover rounded-full mt-4 mx-auto"
+              />
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="w-full py-2 px-2 bg-black text-white rounded-lg mt-4"
+              >
+                Kapat
+              </button>
+            </div>
           </div>
         </div>
       )}

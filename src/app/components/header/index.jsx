@@ -5,16 +5,19 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div>
-      <div className=" shadow-2xl shadow-gray-500 py-3 px-24 max-lg:py-7 max-lg:px-18 fixed w-full z-10 bg-[#FFF2E2] rounded-lg ">
+      <div className=" shadow-2xl shadow-gray-500 py-2 mb-2 max-sm:py-4 lg:py-4 px-24 max-lg:py-4 max-lg:px-18 fixed w-full z-10 bg-[#FFF2E2] rounded-lg ">
         <div className="flex items-center justify-between text-[#4B3F36]">
-          <div>
-            <h1 className="font-bold text-2xl">
-              TAT-<span className="text-red-500">AL</span> <br /> Restaurant
+          <div className="flex flex-col items-base">
+            <h1 className="font-bold text-md">
+              TAT-<span className="text-red-500">AL</span> <br />
+              Restaurant <br /> (Berber Ali'nin Yeri)
             </h1>
           </div>
-          <div className="max-md:hidden">
+
+          <div className="max-lg:hidden">
             <ul className="flex items-center gap-5 font-bold hover:text-underline duration-300">
               <Link href={"/dashboard"}>Yönetim Paneli</Link>
+              <Link href={"/menu"}>Anasayfa</Link>
               <Link href={"/menu1"} className="cursor-pointer">
                 Izgaralar
               </Link>
