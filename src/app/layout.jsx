@@ -15,8 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "TAT-AL",
-  description: "Anadolu'nun Eşsiz Yemekleri...",
+  title: "TAT-AL | Restaurant",
+  description: "TAT-AL QR-Menu",
+  keywords: [
+    "tat-al",
+    "qr menu",
+    "restaurant",
+    "food",
+    "menu",
+    "kebap",
+    "yemek",
+    "içecek",
+    "çorba",
+    "anamenü",
+    "tatlı",
+    "ızgara",
+    "kahvaltı",
+    "pide",
+    "yozgat",
+    "sorgun",
+    "sorgun restoran",
+    "yozgat kebap",
+  ],
 };
 
 export default function RootLayout({ children }) {
