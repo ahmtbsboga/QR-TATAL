@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth, db } from "@/firebaseConfig";
+import { auth, db } from "../../../../firebaseConfig";
 import { IoMdLogOut as LogOut } from "react-icons/io";
 import Link from "next/link";
 import Header from "@/app/components/header";

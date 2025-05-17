@@ -4,7 +4,7 @@ import { MdRestaurantMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../../firebaseConfig"; // Firebase yapılandırmanızın olduğu dosya
+import { db } from "../../../../firebaseConfig"; // Firebase yapılandırmanızın olduğu dosya
 import Link from "next/link";
 
 const DropDown = () => {

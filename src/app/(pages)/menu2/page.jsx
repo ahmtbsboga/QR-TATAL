@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebaseConfig";
+import { db } from "../../../../firebaseConfig";
 import Header from "../../components/header";
 import Link from "next/link";
 

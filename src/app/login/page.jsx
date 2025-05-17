@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import PasswordInput from "./password";
-import { auth } from "@/firebaseConfig";
+import { auth } from "../../../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
