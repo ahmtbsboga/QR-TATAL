@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .bg-color {
+    @apply bg-gradient-to-br from-[#B6B09F] via-[#F2F2F2] to-orange-100;
+  }
+
+  .dropdown {
+    @apply border-b border-gray-200 mb-2 hover:bg-[#EAE4D5] py-2 px-1;
+  }
+}
