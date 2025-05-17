@@ -17,6 +17,8 @@ const Header = () => {
           <div className="max-lg:hidden">
             <ul className="flex items-center gap-5 font-bold hover:text-underline duration-300">
               <Link href={"/dashboard"}>Yönetim Paneli</Link>
+              <Link href={"/login"}>Giriş Yap</Link>
+
               <Link href={"/menu"}>Anasayfa</Link>
               <Link href={"/menu1"} className="cursor-pointer">
                 Izgaralar

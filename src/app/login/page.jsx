@@ -6,6 +6,7 @@ import { auth } from "../../../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Login = () => {
   const router = useRouter();
@@ -54,6 +55,14 @@ const Login = () => {
             Giriş Yap
           </button>
         </form>
+        <div className="relative">
+          <Link
+            href={"/"}
+            className="text-black py-3 px-6 shadow-2xl shadow-gray-500 rounded-lg hover:bg-black hover:text-white duration-700 hover:-translate-y-[7px] absolute right-0 whitespace-nowrap"
+          >
+            Sayfayı Görüntüle
+          </Link>
+        </div>
       </div>
     </div>
   );
