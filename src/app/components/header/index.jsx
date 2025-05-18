@@ -38,6 +38,9 @@ const Header = () => {
               <Link href={"/menu6"} className="cursor-pointer">
                 İçecekler
               </Link>
+              <Link href={"/menu7"} className="cursor-pointer">
+                İkramlarımız
+              </Link>
             </ul>
           </div>
 

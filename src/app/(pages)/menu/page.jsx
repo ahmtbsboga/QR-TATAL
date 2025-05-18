@@ -12,6 +12,7 @@ const CATEGORIES = {
   breakfast: "breakfast",
   sweets: "sweets",
   drinks: "drinks",
+  meze: "meze",
 };
 
 const fetchCategory = async (category) => {
@@ -80,13 +81,18 @@ export default function ProductsPage() {
     queryFn: () => fetchCategory(CATEGORIES.drinks),
     staleTime: 60 * 60 * 1000,
   });
-
+  const { data: meze = [], isLoading: loadingMeze } = useQuery({
+    queryKey: [CATEGORIES.meze],
+    queryFn: () => fetchCategory(CATEGORIES.meze),
+    staleTime: 60 * 60 * 1000,
+  });
   const isAnyLoading =
     loadingProducts ||
     loadingSoups ||
     loadingPide ||
     loadingBreakfast ||
     loadingSweets ||
+    loadingMeze ||
     loadingDrinks;
 
   if (isAnyLoading) {
@@ -124,6 +130,7 @@ export default function ProductsPage() {
     { name: "KAHVALTI ÇEŞİTLERİ", items: breakfast },
     { name: "TATLI ÇEŞİTLERİ", items: sweets },
     { name: "İÇECEKLER", items: drinks },
+    { name: "İKRAMLARIMIZ", items: meze },
   ];
 
   return (

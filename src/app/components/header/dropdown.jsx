@@ -63,6 +63,9 @@ const DropDown = () => {
             <Link href={"/menu6"} className="dropdown">
               İçecekler
             </Link>
+            <Link href={"/menu7"} className="dropdown">
+              İkramlarımız
+            </Link>
             {isAdmin && (
               <Link href="/dashboard">
                 <li className="dropdown font-bold text-blue-600">Dashboard</li>
