@@ -13,7 +13,7 @@ export default function ProductsPage() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setSelectedProduct(null); // dışarı tıklandıysa kapat
+        setSelectedProduct(null);
       }
     };
 

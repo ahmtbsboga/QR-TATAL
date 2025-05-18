@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import PasswordInput from "./password";
 import { auth } from "../../../firebaseConfig";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -42,7 +42,6 @@ const Login = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            //             defaultValue={"tatalrestaurant123@gmail.com"}
           />
           <PasswordInput
             value={password}

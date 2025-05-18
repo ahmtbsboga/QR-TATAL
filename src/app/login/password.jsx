@@ -15,7 +15,6 @@ const PasswordInput = ({ value, onChange }) => {
         className="bg-gradient-to-l from-[#EAE4D5] via-[#B6B09F] text-black outline-none px-4 py-4 rounded-lg font-bold text-md w-full"
         value={value}
         onChange={onChange}
-        //         defaultValue={"sorguntatal123"}
       />
       <button
         type="button"

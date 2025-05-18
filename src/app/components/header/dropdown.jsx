@@ -4,7 +4,7 @@ import { MdRestaurantMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../../../firebaseConfig"; // Firebase yapılandırmanızın olduğu dosya
+import { db } from "../../../../firebaseConfig";
 import Link from "next/link";
 
 const DropDown = () => {
@@ -16,7 +16,6 @@ const DropDown = () => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        // Kullanıcı giriş yapmışsa rolünü kontrol et
         const userDoc = await getDoc(doc(db, "users", user.uid));
         if (userDoc.exists() && userDoc.data().role === "admin") {
           setIsAdmin(true);
@@ -30,7 +29,7 @@ const DropDown = () => {
     return () => unsubscribe();
   }, []);
 
-  if (loading) return null; // Yükleniyorsa hiçbir şey gösterme
+  if (loading) return null;
 
   return (
     <div className="relative">
